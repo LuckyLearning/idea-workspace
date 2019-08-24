@@ -1,0 +1,25 @@
+#  \u2013file:./config/
+#  \u2013file:./
+#  \u2013classpath:/config/
+#  \u2013classpath:/
+#\u4F18\u5148\u7EA7\u7B2C\u56DB
+
+server:
+  port: 8080
+
+
+#spring:
+#  profiles:
+#    active: dev1
+
+---
+server:
+  port: 8083
+spring:
+  profiles: dev1
+
+---
+server:
+  port: 8084
+spring:
+  profiles: prod1
