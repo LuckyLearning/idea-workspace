@@ -4,12 +4,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.List;
-
+/**
+ * 
+ * @author： lifan
+ * @createDate： 2019/9/21 16:00
+ */
 public class MainApp {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        StudentJDBCTemplate studentJDBCTemplate =
-                (StudentJDBCTemplate) context.getBean("studentJDBCTemplate");
+        StudentJDBCTemplate studentJDBCTemplate = (StudentJDBCTemplate) context.getBean("studentJDBCTemplate");
         System.out.println("------Records Creation--------");
         studentJDBCTemplate.create("Zara", 11);
         studentJDBCTemplate.create("Nuha", 2);
@@ -21,6 +24,7 @@ public class MainApp {
             System.out.print(", Name : " + record.getName());
             System.out.println(", Age : " + record.getAge());
         }
+//        studentJDBCTemplate.delete(1);
         System.out.println("----Updating Record with ID = 2 -----");
         studentJDBCTemplate.update(2, 20);
         System.out.println("----Listing Record with ID = 2 -----");
