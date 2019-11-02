@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: learn01
+    password: learn01
+    url: jdbc:mysql://localhost:3306/testdatabase?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #配置默认的隔离级别
+    #隔离级别数字配置的含义
+    #-1 数据库默认隔离级别
+    #1 未提交读
+    #2 读写提交
+    #4 可重复读
+    #8 串行化
+    #tomcat数据源默认隔离级别
+    tomcat:
+      default-transaction-isolation: 2
+    #dbcp2 数据库连接池默认隔离级别
+    #spring.datasource.dbcp2.default-translation-isolation=2
+
+mybatis:
+  mapper-locations: classpath:mapping/*Dao.xml
+  type-aliases-package: com.lif.mybatis.pojo
+
+#showSql
+logging:
+  level:
+    root: debug
+    org:
+      springframark: debug
+      mybatis: debug
+    com:
+      lif:
+        mybatis:
+          mapper : debug

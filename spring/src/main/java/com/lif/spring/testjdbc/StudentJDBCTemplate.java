@@ -31,6 +31,7 @@ public class StudentJDBCTemplate implements StudentDAO {
         return student;
     }
 
+    @Override
     public List<Student> listStudents() {
         String SQL = "select * from Student";
         List<Student> students = jdbcTemplateObject.query(SQL,
