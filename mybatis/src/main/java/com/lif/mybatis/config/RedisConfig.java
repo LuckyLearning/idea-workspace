@@ -13,7 +13,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * @Author: lifan
  * @Date: 2019/11/2 16:46
  */
-@Configuration
+//@Configuration
 public class RedisConfig {
 
     private RedisConnectionFactory redisConnectionFactory;
@@ -24,7 +24,7 @@ public class RedisConfig {
      * @Return: redis.clients.jedis.JedisPoolConfig
      * @createDate: 2019/11/2 17:06
      */
-    @Bean
+//    @Bean
     public JedisPoolConfig jedisPoolConfig() {
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         // 设置最大空闲数
@@ -36,7 +36,7 @@ public class RedisConfig {
         return jedisPoolConfig;
     }
 
-    @Bean(name = "RedisConnectionFactory")
+//    @Bean(name = "RedisConnectionFactory")
     public RedisConnectionFactory initRedisConnectionFactory() {
         if(this.redisConnectionFactory != null) {
             return this.redisConnectionFactory;
@@ -52,7 +52,7 @@ public class RedisConfig {
         return connectionFactory;
     }
 
-    @Bean(name = "redisTemplate")
+//    @Bean(name = "redisTemplate")
     public RedisTemplate<Object, Object> initRedisTemplate() {
         RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
         // RedisTemplate会自动初始化StringSerializer,所以这里直接获取
