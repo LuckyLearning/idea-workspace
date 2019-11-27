@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      database: springboot
+      host: localhost
+      port: 27017
+      username: learn01
+      password: learn01

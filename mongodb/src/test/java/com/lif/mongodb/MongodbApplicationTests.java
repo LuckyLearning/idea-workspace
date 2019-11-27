@@ -1,10 +1,10 @@
-package com.lif.redistest;
+package com.lif.mongodb;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RedisTestApplicationTests {
+class MongodbApplicationTests {
 
     @Test
     void contextLoads() {

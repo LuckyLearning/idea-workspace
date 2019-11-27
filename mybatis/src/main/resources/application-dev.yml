@@ -29,10 +29,19 @@ spring:
     port: 6379
     host: 127.0.0.1
     timeout: 1000
+#    redis自定义缓存管理器
+#    # 禁用前缀
+#    spring.cache.redis.use-key-prefix=false
+#    # 允许保存空值
+#    spring.cache.redis.cache-null-values=true
+#    # 自定义前缀
+#    spring.cache.redis.key-prefix=
+#    # 定义超时时间，单位毫秒
+#    spring.cache.redis.time-to-live=600000
 
 mybatis:
-  mapper-locations: classpath:mapping/*Dao.xml
-  type-aliases-package: com.lif.mybatis.pojo
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.lif.*.pojo
 
 #showSql
 logging:

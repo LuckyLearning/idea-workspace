@@ -92,7 +92,7 @@ public class UserServiceImpl implements UserService {
      * 移除缓存
      * beforeInvocation = false 是默认值
      * @param id
-     * @Return: int
+     * @return: int
      * @createDate: 2019/11/21 17:51
      */
     @Override

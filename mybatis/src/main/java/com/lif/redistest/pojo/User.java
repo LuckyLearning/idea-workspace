@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @Author: lifan
  * @Date: 2019/11/20 17:52
  */
-@Alias("user")
+@Alias("t_user")
 public class User implements Serializable {
     private static final long serialVersionUID = 6485389076686933837L;
     private Long id;
