@@ -12,7 +12,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 
     /**
      *
-     * @param importingClassMetadata
+     * @param importingClassMetadata 上下文
      * @param registry
      */
     @Override
