@@ -17,6 +17,6 @@ public class MyImportSelector implements ImportSelector {
     @Override
     public String[] selectImports(AnnotationMetadata importingClassMetadata) {
         System.out.println("--->?");
-        return new String[]{"com.lif.spring.testjdbc.Student"};
+        return new String[]{"com.lif.spring.testjdbc.Student", "com.lif.spring.bean.Color"};
     }
 }

@@ -1,7 +1,9 @@
 package com.lif.spring.config;
 
+import com.lif.spring.bean.ColorFactoryBean;
 import com.lif.spring.bean.Person;
 import com.lif.spring.condition.LinuxCondition;
+import com.lif.spring.condition.MyImportBeanDefinitionRegistrar;
 import com.lif.spring.condition.MyImportSelector;
 import com.lif.spring.condition.WindowsCondition;
 import com.lif.spring.testjdbc.Student;
@@ -17,7 +19,7 @@ import org.springframework.context.annotation.*;
 //                @ComponentScan.Filter(type = FilterType.CUSTOM, classes = {MyTyoe.class})
 //        }, useDefaultFilters = false)
 //})
-@Import({MyType.class, MyImportSelector.class})
+@Import({MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class MainConfig {
 
     /**
@@ -62,7 +64,15 @@ public class MainConfig {
      * 3.@Import（快速给容器中导入一个组件）
      *          1).@Import(要导入到容器中的组件)，容器中会字段注册这个组件，id默认是全类名。
      *          2).ImportSelector：返回需要导入的组件的全类名数组。
-     *          3).ImportBeanDefinitionRegistrar:
+     *          3).ImportBeanDefinitionRegistrar: 手动注册bean到容器中
+     * 4.使用spring提供的FactoryBean（工厂Bean）：
+     *          1).默认获取的是工厂bean调用getObject创建的对象
+     *          2).要获取工厂bean本身，需要给id前加一个&
+     *              &colorFactoryBean
      */
+    @Bean
+    public ColorFactoryBean colorFactoryBean() {
+        return new ColorFactoryBean();
+    }
 
 }
